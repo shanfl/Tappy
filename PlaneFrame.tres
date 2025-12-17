@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://jep3itag1iiu"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://jep3itag1iiu"]
 
 [ext_resource type="Texture2D" uid="uid://bk1weshdrxkh8" path="res://assets/plane/planes_sheet.png" id="1_bjpjf"]
 
