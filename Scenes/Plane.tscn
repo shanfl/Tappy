@@ -72,8 +72,10 @@ _data = {
 &"power": SubResource("Animation_2qif8")
 }
 
-[node name="Plane" type="CharacterBody2D" unique_id=1183821758]
+[node name="Plane" type="CharacterBody2D" unique_id=1183821758 node_paths=PackedStringArray("_aniplayer") groups=["plane"]]
 script = ExtResource("1_ng7lx")
+Grivaty = 29.8
+_aniplayer = NodePath("AnimationPlayer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=19371829]
 scale = Vector2(0.75, 0.75)
