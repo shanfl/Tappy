@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dhkt6tisl2o5s"]
+
+[ext_resource type="LabelSettings" uid="uid://dsd8kl1mespvr" path="res://Scenes/scoreingamesettings.tres" id="1_e0onf"]
+[ext_resource type="Script" uid="uid://c7ixtpyjp47x2" path="res://Scenes/Hud.cs" id="1_fccik"]
+
+[node name="Hud" type="Control" unique_id=1309011222 node_paths=PackedStringArray("_scoreLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fccik")
+_scoreLabel = NodePath("MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1604161965]
+layout_mode = 1
+offset_right = 15.0
+offset_bottom = 25.0
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1983669706]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "000"
+label_settings = ExtResource("1_e0onf")
+vertical_alignment = 1

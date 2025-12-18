@@ -12,23 +12,42 @@ public partial class Pipes : Node2D
 
 	[Export] private Area2D _laser;
 
-	private void OnScreenExited()
+
+
+    private void OnScreenExited()
 	{
 		GD.Print("Pipe exited screen, freeing...");
 		QueueFree();
 	}
 
 
+	private void OnPlaneDied()
+	{
+		SetProcess(false);
+	}
+
+
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{
+	{ 
 		_screenNotifier.ScreenExited += OnScreenExited;
 
 		_pipeLower.BodyEntered += OnPipeBodyEntered;
 		_pipeUpper.BodyEntered += OnPipeBodyEntered;
 		_laser.BodyEntered += OnLaserBodyEntered;
+
+
+		SignalManager.Instance.OnPlaneDied  += OnPlaneDied;
+		
 	}
+
+	
+    public override void _ExitTree()
+    {
+        SignalManager.Instance.OnPlaneDied  -= OnPlaneDied;
+    }
 
 	public void OnPipeBodyEntered(Node2D body)
 	{
@@ -53,6 +72,7 @@ public partial class Pipes : Node2D
 		{
 			GD.Print("Plane hit laser, game over!");
 			//(body as Plane).Die();
+			ScoreManager.IncreaseScore(1);
 		}
 	}
 

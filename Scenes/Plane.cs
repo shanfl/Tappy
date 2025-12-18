@@ -8,7 +8,7 @@ public partial class Plane : CharacterBody2D
 
 	[Export] public AnimationPlayer _aniplayer;
 
-	[Signal] public delegate void OnPlaneDiedEventHandler();
+	//[Signal] public delegate void OnPlaneDiedEventHandler();
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -47,6 +47,7 @@ public partial class Plane : CharacterBody2D
 	{
 		SetPhysicsProcess(false);
 		GD.Print("Die");
-		EmitSignal(SignalName.OnPlaneDied);
+		//EmitSignal(SignalName.OnPlaneDied);
+		SignalManager.EmitOnPlaneDied();
 	}
 }

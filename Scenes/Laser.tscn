@@ -22,6 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_cfk2d"]
 resource_name = "flash"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,3 +54,4 @@ shape = SubResource("RectangleShape2D_cfk2d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=468911225]
 libraries/ = SubResource("AnimationLibrary_7lyxe")
+autoplay = &"flash"
