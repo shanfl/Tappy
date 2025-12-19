@@ -44,7 +44,7 @@ _data = {
 &"flash": SubResource("Animation_v1gob")
 }
 
-[node name="Main" type="Control" unique_id=1646459506]
+[node name="Main" type="Control" unique_id=1646459506 node_paths=PackedStringArray("_highScoreLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,6 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v1gob")
+_highScoreLabel = NodePath("MC/HighScoreLabel")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=844002829]
 clip_contents = true
@@ -100,7 +101,7 @@ text = "HightScore:"
 label_settings = ExtResource("4_rgh2o")
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="MC" unique_id=1646520465]
+[node name="HighScoreLabel" type="Label" parent="MC" unique_id=1646520465]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8

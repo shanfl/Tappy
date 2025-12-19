@@ -68,6 +68,10 @@ public partial class Pipes : Node2D
 	public void OnLaserBodyEntered(Node2D body)
 	{
 		GD.Print("Laser body entered: " + body.Name);
+
+		// 防止飞机落下得分,飞起又得一分得错误bug
+		_laser.BodyEntered -= OnLaserBodyEntered;
+
 		if (body is Plane)
 		{
 			GD.Print("Plane hit laser, game over!");

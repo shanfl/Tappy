@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bd37kygxypwn6" path="res://Scenes/Barrier.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://csla5aa6y1igu" path="res://Scenes/Pipes.tscn" id="4_kldst"]
 [ext_resource type="PackedScene" uid="uid://dhkt6tisl2o5s" path="res://Scenes/hud.tscn" id="6_7lihs"]
+[ext_resource type="PackedScene" uid="uid://cuf2jrhtabkgx" path="res://Scenes/GameOver.tscn" id="7_fgofq"]
+[ext_resource type="PackedScene" uid="uid://dme81e2mk3qqx" path="res://Scenes/ParallaxBg.tscn" id="8_2irst"]
 
 [node name="Game" type="Node2D" unique_id=1678005134 node_paths=PackedStringArray("_pipesHolder", "_spawnUpper", "_spawnLower", "_spawnTimer")]
 script = ExtResource("1_b2bpf")
@@ -15,7 +17,11 @@ _spawnLower = NodePath("SpawnLower")
 _pipeScene = ExtResource("4_kldst")
 _spawnTimer = NodePath("SpawnTimer")
 
+[node name="ParallaxBG" parent="." unique_id=861722825 instance=ExtResource("8_2irst")]
+z_index = -10
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1093679728]
+visible = false
 position = Vector2(327, 468)
 texture = ExtResource("1_iukft")
 
@@ -48,3 +54,6 @@ offset_left = 19.0
 offset_top = 31.0
 offset_right = 19.0
 offset_bottom = 31.0
+
+[node name="GameOver" parent="CanvasLayer" unique_id=1699555476 instance=ExtResource("7_fgofq")]
+visible = false

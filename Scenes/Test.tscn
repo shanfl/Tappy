@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://co0hcknlu5mjv"]
+
+[ext_resource type="Texture2D" uid="uid://b0emfkhdj5rl2" path="res://assets/background/clouds_2.png" id="1_ko2s7"]
+[ext_resource type="Texture2D" uid="uid://6c6l8smxeis1" path="res://assets/background/clouds_1.png" id="2_0dy5s"]
+[ext_resource type="Texture2D" uid="uid://cans3ib37iggd" path="res://assets/background/rocks_2.png" id="3_f2nln"]
+
+[node name="Test" type="Node2D" unique_id=1960424950]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1906984818]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Clouds2" type="Sprite2D" parent="Parallax2D" unique_id=1658920004]
+position = Vector2(962, 534)
+texture = ExtResource("1_ko2s7")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=114736653]
+repeat_size = Vector2(1920, 0)
+
+[node name="Clouds1" type="Sprite2D" parent="Parallax2D2" unique_id=428901753]
+position = Vector2(-828, 820)
+texture = ExtResource("2_0dy5s")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=866426741]
+scroll_offset = Vector2(-363, -593)
+
+[node name="Rocks1" type="Sprite2D" parent="Parallax2D3" unique_id=2065901805]
+position = Vector2(1328, 906)
+texture = ExtResource("3_f2nln")

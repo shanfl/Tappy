@@ -20,10 +20,12 @@ public partial class Game : Node2D
 	public override void _Ready()
 	{
 		GD.Print("Game Ready"); 
-		_gameOver = false;
+		//_gameOver = false;
 		_spawnTimer.Timeout += SpawnPipes;
 		//_plane.OnPlaneDied += GameOver;
 		SignalManager.Instance.OnPlaneDied += GameOver;
+
+		//SignalManager.Instance.Connect(SignalManager.SignalName.OnPlaneDied, Callable.From(GameOver));
 
 		ScoreManager.ResetScore();
 
@@ -38,16 +40,15 @@ public partial class Game : Node2D
     public override void _ExitTree()
     {
         SignalManager.Instance.OnPlaneDied -= GameOver;
-
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{ 
-		if(_gameOver && Input.IsActionJustPressed("fly"))
-		{
-			ChangeToMainScene();
-		}
+		// if(_gameOver && Input.IsActionJustPressed("fly"))
+		// {
+		// 	ChangeToMainScene();
+		// }
 
 		if(Input.IsKeyPressed(Key.Q))
 		{
@@ -55,26 +56,27 @@ public partial class Game : Node2D
 		}
 	}
 
-	private void StopPipesSpawning()
-	{
-		_spawnTimer.Stop();
+	// private void StopPipesSpawning()
+	// {
+		
 
-		// foreach (Pipes pipe in _pipesHolder.GetChildren())
-		// {
-		// 	pipe.SetProcess(false);
-		// }
-	}
+	// 	// foreach (Pipes pipe in _pipesHolder.GetChildren())
+	// 	// {
+	// 	// 	pipe.SetProcess(false);
+	// 	// }
+	// }
 
 	private void GameOver()
 	{
 		GD.Print("Game Over!");
-		StopPipesSpawning();
+		_spawnTimer.Stop();
+		//StopPipesSpawning();
 
-		_gameOver = true;
+		//_gameOver = true;
 		
 	}
 
-	private bool _gameOver = false;
+	//private bool _gameOver = false;
 	private void ChangeToMainScene()
 	{
 		//GetTree().ChangeSceneToPacked(Main_Scene);	
